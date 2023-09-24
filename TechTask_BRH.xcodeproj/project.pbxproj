@@ -21,6 +21,9 @@
 		217AB0422AC0F51200B69EBB /* PostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0412AC0F51200B69EBB /* PostsViewModelTests.swift */; };
 		217AB0442AC0F85C00B69EBB /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0432AC0F85C00B69EBB /* PostListView.swift */; };
 		217AB0462AC0FA5D00B69EBB /* PostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0452AC0FA5D00B69EBB /* PostDetailsView.swift */; };
+		217AB0482AC0FD0F00B69EBB /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0472AC0FD0F00B69EBB /* CommentsViewModel.swift */; };
+		217AB04A2AC0FD5D00B69EBB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0492AC0FD5D00B69EBB /* Comment.swift */; };
+		217AB04C2AC0FE3500B69EBB /* CommentsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB04B2AC0FE3500B69EBB /* CommentsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,10 @@
 		217AB0412AC0F51200B69EBB /* PostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelTests.swift; sourceTree = "<group>"; };
 		217AB0432AC0F85C00B69EBB /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		217AB0452AC0FA5D00B69EBB /* PostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
+		217AB0472AC0FD0F00B69EBB /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		217AB0492AC0FD5D00B69EBB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		217AB04B2AC0FE3500B69EBB /* CommentsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModelTests.swift; sourceTree = "<group>"; };
+		217AB04D2AC100D500B69EBB /* Code coverage.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Code coverage.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,7 @@
 		217AAFFC2AC0E68800B69EBB = {
 			isa = PBXGroup;
 			children = (
+				217AB04D2AC100D500B69EBB /* Code coverage.xctestplan */,
 				217AB0072AC0E68800B69EBB /* TechTask_BRH */,
 				217AB01D2AC0E68A00B69EBB /* TechTask_BRHTests */,
 				217AB0272AC0E68A00B69EBB /* TechTask_BRHUITests */,
@@ -134,6 +142,7 @@
 			children = (
 				217AB01E2AC0E68A00B69EBB /* TechTask_BRHTests.swift */,
 				217AB0412AC0F51200B69EBB /* PostsViewModelTests.swift */,
+				217AB04B2AC0FE3500B69EBB /* CommentsViewModelTests.swift */,
 			);
 			path = TechTask_BRHTests;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				217AB03D2AC0F42900B69EBB /* Post.swift */,
+				217AB0492AC0FD5D00B69EBB /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				217AB03B2AC0F2D800B69EBB /* PostsViewModel.swift */,
+				217AB0472AC0FD0F00B69EBB /* CommentsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,10 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217AB0482AC0FD0F00B69EBB /* CommentsViewModel.swift in Sources */,
 				217AB0122AC0E68A00B69EBB /* Persistence.swift in Sources */,
 				217AB03C2AC0F2D800B69EBB /* PostsViewModel.swift in Sources */,
 				217AB00B2AC0E68800B69EBB /* ContentView.swift in Sources */,
 				217AB03E2AC0F42900B69EBB /* Post.swift in Sources */,
+				217AB04A2AC0FD5D00B69EBB /* Comment.swift in Sources */,
 				217AB0092AC0E68800B69EBB /* TechTask_BRHApp.swift in Sources */,
 				217AB0152AC0E68A00B69EBB /* TechTask_BRH.xcdatamodeld in Sources */,
 				217AB0442AC0F85C00B69EBB /* PostListView.swift in Sources */,
@@ -327,6 +340,7 @@
 			files = (
 				217AB0422AC0F51200B69EBB /* PostsViewModelTests.swift in Sources */,
 				217AB01F2AC0E68A00B69EBB /* TechTask_BRHTests.swift in Sources */,
+				217AB04C2AC0FE3500B69EBB /* CommentsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -459,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

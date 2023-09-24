@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "EC0BA621-FFF4-4BD2-8D6A-6DE8AD200A23",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TechTask_BRH.xcodeproj",
+        "identifier" : "217AB0192AC0E68A00B69EBB",
+        "name" : "TechTask_BRHTests"
+      }
+    }
+  ],
+  "version" : 1
+}
