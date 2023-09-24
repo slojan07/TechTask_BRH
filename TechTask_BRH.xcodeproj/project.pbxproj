@@ -19,6 +19,8 @@
 		217AB03C2AC0F2D800B69EBB /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB03B2AC0F2D800B69EBB /* PostsViewModel.swift */; };
 		217AB03E2AC0F42900B69EBB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB03D2AC0F42900B69EBB /* Post.swift */; };
 		217AB0422AC0F51200B69EBB /* PostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0412AC0F51200B69EBB /* PostsViewModelTests.swift */; };
+		217AB0442AC0F85C00B69EBB /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0432AC0F85C00B69EBB /* PostListView.swift */; };
+		217AB0462AC0FA5D00B69EBB /* PostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0452AC0FA5D00B69EBB /* PostDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		217AB03B2AC0F2D800B69EBB /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		217AB03D2AC0F42900B69EBB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		217AB0412AC0F51200B69EBB /* PostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelTests.swift; sourceTree = "<group>"; };
+		217AB0432AC0F85C00B69EBB /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		217AB0452AC0FA5D00B69EBB /* PostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				217AB00A2AC0E68800B69EBB /* ContentView.swift */,
+				217AB0432AC0F85C00B69EBB /* PostListView.swift */,
+				217AB0452AC0FA5D00B69EBB /* PostDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				217AB03E2AC0F42900B69EBB /* Post.swift in Sources */,
 				217AB0092AC0E68800B69EBB /* TechTask_BRHApp.swift in Sources */,
 				217AB0152AC0E68A00B69EBB /* TechTask_BRH.xcdatamodeld in Sources */,
+				217AB0442AC0F85C00B69EBB /* PostListView.swift in Sources */,
+				217AB0462AC0FA5D00B69EBB /* PostDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

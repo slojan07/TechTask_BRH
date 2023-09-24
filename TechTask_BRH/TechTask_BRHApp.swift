@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct TechTask_BRHApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject private var postsViewModel = PostsViewModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: postsViewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

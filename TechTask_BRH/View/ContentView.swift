@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel: PostsViewModel
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -17,28 +19,23 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        TabView {
+            NavigationView {
+               PostListView(viewModel: viewModel)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            .tabItem {
+                Label("Posts", systemImage: "list.bullet")
             }
-            Text("Select an item")
+
+            NavigationView {
+                PostListView(viewModel: viewModel)
+            }
+            .tabItem {
+                Label("Offline", systemImage: "arrow.down.circle")
+                    
+                   
+            }
+           
         }
     }
 
@@ -81,8 +78,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(viewModel: PostsViewModel).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
