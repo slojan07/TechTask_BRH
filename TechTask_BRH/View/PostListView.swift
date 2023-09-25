@@ -13,26 +13,25 @@ struct PostListView: View {
     @ObservedObject var viewModel: PostsViewModel
 
     var body: some View {
+      //  NavigationView {
             List(viewModel.posts) { post in
-              
+                NavigationLink(destination: PostDetailsView(post: post)) {
                     VStack(alignment: .leading) {
-                    
                         Text(post.title)
                             .font(.headline)
                             .frame(height: 30)
                         Text(post.body)
                             .font(.body)
                             .frame(height: 50)
-                    
                     }
-             
+                }
             }
             .navigationBarTitle("All posts")
             .onAppear {
-                
                 viewModel.fetchPosts()
         
                     
             }
     }
 }
+

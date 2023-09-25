@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct TechTask_BRHApp: App {
+    
     let persistenceController = PersistenceController.shared
     @StateObject private var postsViewModel = PostsViewModel()
 

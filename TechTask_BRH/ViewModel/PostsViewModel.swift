@@ -15,6 +15,11 @@ class PostsViewModel: ObservableObject {
     @Published var posts: [Post] = []
     @Published var error: Error?
     
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \PostEntity.id, ascending: false)],
+        animation: .default)
+    var postitems: FetchedResults<PostEntity>
+    
     func fetchPosts() {
         let postURL = URL(string: "https://jsonplaceholder.typicode.com/posts/")!
         
