@@ -11,6 +11,7 @@ import SwiftUI
 
 struct PostListView: View {
     @ObservedObject var viewModel: PostsViewModel
+    @State private var showErrorAlert = false
 
     var body: some View {
       //  NavigationView {
@@ -28,9 +29,17 @@ struct PostListView: View {
             }
             .navigationBarTitle("All posts")
             .onAppear {
+               
                 viewModel.fetchPosts()
-        
                     
+            }
+            .alert(isPresented: $showErrorAlert) {
+                Alert(title: Text("Error"), message: Text(viewModel.error?.localizedDescription ?? "Unknown error"), dismissButton: .default(Text("OK")))
+            }
+            .onReceive(viewModel.$error) { error in
+                if let _ = error {
+                    showErrorAlert = true
+                }
             }
     }
 }

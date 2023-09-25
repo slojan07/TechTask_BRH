@@ -34,3 +34,4 @@ final class CommentsViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 2.0)
     }
 }
+

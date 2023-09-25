@@ -40,6 +40,7 @@ struct OfflinePostListView: View {
                 }
             }
             .navigationBarTitle("Offline Posts")
+        
     }
 
 }

@@ -23,6 +23,7 @@ class PostsViewModel: ObservableObject {
     func fetchPosts() {
         let postURL = URL(string: "https://jsonplaceholder.typicode.com/posts/")!
         
+        
         URLSession.shared.dataTask(with: postURL) { data, _, error in
             if let error = error {
                 self.error = error

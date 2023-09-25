@@ -34,23 +34,31 @@ struct PostDetailsView: View {
                 }
                 isSavedOffline = !isSavedOffline
             }) {
-                Label(isSavedOffline ? "Remove from Offline" : "Save To Online", systemImage: isSavedOffline ? "minus" : "plus")
-                    .foregroundColor(isSavedOffline ? .red : .green)
+                Label(isSavedOffline ? "Remove from Offline" : "Save To Offline", systemImage: isSavedOffline ? "minus" : "plus")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(isSavedOffline ? .red : .green)
+                    .cornerRadius(10)
             }
             
             Divider()
-            
+                .padding()
             
             Button(action: {
                 showComments = true
                 
             }) {
                 Text("View Comments")
-                    .foregroundColor(.blue)
+                
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(.blue)
+                    .cornerRadius(10)
+                    
             }
             .sheet(isPresented: $showComments) {
                 
-               // CommentListView(postId: post.id)
+                CommentListView(postId: post.id)
                 
             }
         }
@@ -99,7 +107,7 @@ struct PostDetailsView: View {
         
         do {
             let items = try viewContext.fetch(fetchRequest)
-            return !items.isEmpty // Return true if there are items with the same ID (i.e., post is saved)
+            return !items.isEmpty 
         } catch {
             print("Error checking if item exists: \(error.localizedDescription)")
             return true
