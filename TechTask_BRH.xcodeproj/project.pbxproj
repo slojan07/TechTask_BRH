@@ -29,6 +29,7 @@
 		217AB0532AC104FF00B69EBB /* PostEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0512AC104FF00B69EBB /* PostEntity+CoreDataProperties.swift */; };
 		217AB0552AC10BC700B69EBB /* OfflinePostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0542AC10BC700B69EBB /* OfflinePostListView.swift */; };
 		217AB0572AC10C0C00B69EBB /* OfflinePostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0562AC10C0C00B69EBB /* OfflinePostDetailsView.swift */; };
+		217AB0592AC11DB600B69EBB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB0582AC11DB600B69EBB /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		217AB0512AC104FF00B69EBB /* PostEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		217AB0542AC10BC700B69EBB /* OfflinePostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePostListView.swift; sourceTree = "<group>"; };
 		217AB0562AC10C0C00B69EBB /* OfflinePostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePostDetailsView.swift; sourceTree = "<group>"; };
+		217AB0582AC11DB600B69EBB /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		217AB03A2AC0F26900B69EBB /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				217AB0582AC11DB600B69EBB /* Error.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217AB0592AC11DB600B69EBB /* Error.swift in Sources */,
 				217AB0522AC104FF00B69EBB /* PostEntity+CoreDataClass.swift in Sources */,
 				217AB0482AC0FD0F00B69EBB /* CommentsViewModel.swift in Sources */,
 				217AB0552AC10BC700B69EBB /* OfflinePostListView.swift in Sources */,

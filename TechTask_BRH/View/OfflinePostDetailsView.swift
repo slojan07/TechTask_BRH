@@ -29,7 +29,6 @@ struct OfflinePostDetailsView: View {
                 deletesavedItem()
                }) {
                 Label("Remove from Offline", systemImage: "minus")
-                   // .foregroundColor(.red)
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.red)
@@ -53,7 +52,6 @@ struct OfflinePostDetailsView: View {
             for item in items {
                 viewContext.delete(item)
             }
-            
             try viewContext.save()
         } catch {
             print("Error deleting item: \(error.localizedDescription)")
