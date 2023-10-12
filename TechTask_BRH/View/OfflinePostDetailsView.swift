@@ -5,57 +5,44 @@
 //  Created by wiljan S on 9/25/23.
 //
 
-import Foundation
 import SwiftUI
 import CoreData
+import SwiftUI
 
 struct OfflinePostDetailsView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
-    let post: PostEntity
+    @ObservedObject private var viewModel: OfflinePostDetailsViewModel
+    @Environment(\.presentationMode) var presentationMode // Add this line
+
+    init(post: PostEntity, viewContext: NSManagedObjectContext) {
+        self.viewModel = OfflinePostDetailsViewModel(viewContext: viewContext, post: post)
+    }
+
     var body: some View {
         VStack(alignment: .center) {
-            Text(post.title ?? "")
+            Text(viewModel.post.title ?? "")
                 .font(.title)
             
-            Text(post.body ?? "")
+            Text(viewModel.post.body ?? "")
                 .font(.body)
-            
             
             Divider()
                 .padding()
+            
             Button(action: {
-                
-                deletesavedItem()
-               }) {
+                viewModel.deletePost()
+                presentationMode.wrappedValue.dismiss()
+            }) {
                 Label("Remove from Offline", systemImage: "minus")
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.red)
                     .cornerRadius(10)
-                    
             }
-            
-        } .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-           
-            .navigationBarTitle("Post Details")
-    }
-    
-    
-    func deletesavedItem() {
-        let fetchRequest: NSFetchRequest<PostEntity> = PostEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %ld", post.id)
-        
-        do {
-            let items = try viewContext.fetch(fetchRequest)
-            for item in items {
-                viewContext.delete(item)
-            }
-            try viewContext.save()
-        } catch {
-            print("Error deleting item: \(error.localizedDescription)")
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .navigationBarTitle("Post Details")
     }
-       
 }
+

@@ -10,11 +10,10 @@ import CoreData
 struct PersistenceController {
 
     static let shared = PersistenceController()
-    let container: NSPersistentContainer
-
-    
+    var container: NSPersistentContainer
     
     init(inMemory: Bool = false) {
+        
         container = NSPersistentContainer(name: "TechTask_BRH")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
@@ -26,5 +25,6 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+        
     }
 }

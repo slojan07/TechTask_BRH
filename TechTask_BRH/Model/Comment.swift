@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct Comment: Identifiable, Decodable {
+struct Comment: Identifiable, Decodable, Equatable {
     var id: Int
     var postId: Int
     var name: String
     var email: String
     var body: String
 }
+
+
+
