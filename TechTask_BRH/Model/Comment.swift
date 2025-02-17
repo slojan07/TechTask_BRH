@@ -13,6 +13,7 @@ struct Comment: Identifiable, Decodable, Equatable {
     var name: String
     var email: String
     var body: String
+    var notes: String
 }
 
 
